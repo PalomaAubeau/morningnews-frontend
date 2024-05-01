@@ -23,8 +23,7 @@ function Home() {
       });
   }, []);
 
-  let articles;
-  articles = articlesData.map((data, i) => {
+  const articles = articlesData.map((data, i) => {
     const isBookmarked = bookmarks.some(
       (bookmark) => bookmark.title === data.title
     );
