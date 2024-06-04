@@ -41,11 +41,13 @@ function Article(props) {
       <div className={styles.articleHeader}>
         <h3>{props.title}</h3>
         <div className={styles.articleIcons}>
-          <FontAwesomeIcon
-            onClick={() => dispatch(hideArticle(props))} // utiliser dispatch pour accéder au reducer
-            icon={faEyeSlash}
-            className={styles.eyeSlashIcon}
-          />
+          {props.inBookmarks || (
+            <FontAwesomeIcon
+              onClick={() => dispatch(hideArticle(props))} // utiliser dispatch pour accéder au reducer
+              icon={faEyeSlash}
+              className={styles.eyeSlashIcon}
+            />
+          )}
           <FontAwesomeIcon
             onClick={() => handleBookmarkClick()}
             icon={faBookmark}
